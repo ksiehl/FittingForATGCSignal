@@ -9,7 +9,7 @@ This script creates the complete signal model and creates a datacard and a works
 Setup Instructions
 ==================
 # Make sure you have the right architecture
-export SCRAM_ARCH=lc6_amd64_gcc481
+export SCRAM_ARCH=slc6_amd64_gcc481
 
 # Setup CMSSW
 cmsrel CMSSW_7_1_5
