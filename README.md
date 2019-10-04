@@ -30,7 +30,7 @@ scram b -j 20
 
 # Make a folder Input in and FittingForSignal and copy the required files e.g.
 cd FittingForATGCSignal; mkdir Input;
-cp /afs/cern.ch/work/m/maiqbal/private/aTGC/Samples_80X_Working/WW-aTGC_mu.root ./Input
+cp /afs/cern.ch/work/k/ksiehl/public/ansar_project/ntuple_output_storage/WW-aTGC_{mu,ele}.root ./Input
 cp ../../../../Background/CMSSW_5_3_32/src/FittingForATGCBackground/cards_mu_HPV_900_3500/wwlvj_mu_HPV_workspace.root ./Input
 # etc.
 
