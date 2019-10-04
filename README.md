@@ -17,13 +17,13 @@ cd CMSSW_7_1_5/src
 cmsenv
 
 # Clone the repository
-git clone git@github.com:muhammadansariqbal/FittingForATGCSignal.git
+git clone git@github.com:ksiehl/FittingForATGCSignal.git
 
 # Clone the Higgs combined limit tool repo; Look at the repo for further details
-git clone git@github.com:muhammadansariqbal/HiggsAnalysis.git
+git clone git@github.com:ksiehl/HiggsAnalysis.git
 
 # Clone the CombinedEWKAnalysis repo; Look at the repo for further details
-git clone git@github.com:muhammadansariqbal/CombinedEWKAnalysis.git
+git clone git@github.com:ksiehl/CombinedEWKAnalysis.git
 
 # Build
 scram b -j 20
