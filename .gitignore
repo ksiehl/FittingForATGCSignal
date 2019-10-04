@@ -1,2 +1,5 @@
 Input
 *.pyc
+Output
+Plots
+*.root
