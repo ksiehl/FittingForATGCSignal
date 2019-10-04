@@ -35,10 +35,12 @@ cp ../../../../BCKGRND_STEP/CMSSW_5_3_32/src/FittingForATGCBackground/cards_mu_H
 cp ../../../../BCKGRND_STEP/CMSSW_5_3_32/src/FittingForATGCBackground/cards_el_HPV_900_4500/wwlvj_el_HPV_900_4500_workspace.root ./Input
 
 # renaming files is necesarry (could be done as part of copying command, but this calls attention to it)
+cd Input/
 mv WW-aTGC_ele.root WW-aTGC_el.root
 mv WZ-aTCG_ele.root WZ-aTGC_el.root
 mv wwlvj_mu_HPV_900_4500_workspace.root wwlvj_mu_HPV_workspace.root
 mv wwlvj_el_HPV_900_4500_workspace.root wwlvj_el_HPV_workspace.root
+cd -
 
 # Run the main script
 python make_PDF_input_oneCat.py -n -c mu -p --savep
