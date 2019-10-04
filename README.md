@@ -2,12 +2,16 @@ SIGNAL PARAMETRIZATION
 ======================
 
 ```
+NOTE: This is only garanteed to work on slc6 architecture.
+
 This script creates the complete signal model and creates a datacard and a workspace per channel containing everything needed for the limit extraction.
 
 Setup Instructions
 ==================
+# Make sure you have the right architecture
+export SCRAM_ARCH=lc6_amd64_gcc481
 
-# Setup CMSSW in ~/private/FittingForATGC/Signal/
+# Setup CMSSW
 cmsrel CMSSW_7_1_5
 cd CMSSW_7_1_5/src
 cmsenv
