@@ -42,8 +42,9 @@ mv wwlvj_mu_HPV_900_4500_workspace.root wwlvj_mu_HPV_workspace.root
 mv wwlvj_el_HPV_900_4500_workspace.root wwlvj_el_HPV_workspace.root
 cd -
 
-# Run the main script
-python make_PDF_input_oneCat.py -n -c mu -p --savep
+# Run the main script; this must be done with channel "elmu"; if channel 'el' or 'mu' are selected it will complain about not seeing the cards for the other channel
+# Another thing is that this script will produce a segmentation fault error message, but this appears to come only after everything has run, so (pray) it's harmless.
+python make_PDF_input_oneCat.py -n -c elmu -p --savep
 # -n: Read the input trees and create RooDataHists(-> faster access); Needed at the first run or when the input trees are changed.
 # -c {channel}: Only run for {channel} (mu or el)
 # -p: Make plots
