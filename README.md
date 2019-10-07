@@ -89,18 +89,40 @@ Fits for Single Point
 ---------------------
 # To get the exact fit results for any point (e.g. cwww=3.6) we need to run
 combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=3.6,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cwww_3.6
+
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=4.5,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _ccw_4.5
+
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=20 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cb_20
+
 # The output is saved in mlfit_cwww_3.6.root containing a RooFitResult fit_s with all final parameter values as well as a RooArgSet norm_fit_s with the final normalizations.
 
 # To get the results for all parameters zero
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cwww
+
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_ccw
+
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cb
 
 # We can also freeze all aTGC parameters and set a different POI
 combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_el --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly
 
 Asimov Data Set Generation
 --------------------------
-combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cwww
+
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_ccw
+
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cb
+
 # Add --toysFrequentist to generate Asimov data after getting optimal nuisance parameters values from a fit to data. Useful to get projected signal values.
+
+# Before the next step, we need to compile; path can be confirmed with scram tool info roofitcore | grep INCLUDE
+root -b
+gSystem->AddIncludePath("-I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/lcg/roofit/5.34.18-cms3/include");
+.L PdfDiagonalizer.cc+
+.L Util.cxx+
+.L hyperg_2F1.c+
+.L HWWLVJRooPdfs.cxx+
 
 Postfit Plots
 -------------
