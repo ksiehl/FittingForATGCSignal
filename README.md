@@ -45,7 +45,7 @@ cd -
 # Run the main script; this must be done with channel "elmu"; if channel 'el' or 'mu' are selected it will complain about not seeing the cards for the other channel
 # Another thing is that this script will produce a segmentation fault error message, but this appears to come only after everything has run, so (pray) it's harmless.
 # This creates the signal fitting functions for anomalous parameters (and SM?) and puts them into workspaces; it also produces cards with uncertianties and channels;
-# all of this is input into the next steps
+# all of this is finalized in the next step (both for LEP and EFT parameters), which immediatelly precedes the actual limits on anomalous parameters
 python make_PDF_input_oneCat.py -n -c elmu -p --savep
 # -n: Read the input trees and create RooDataHists(-> faster access); Needed at the first run or when the input trees are changed.
 # -c {channel}: Only run for {channel} (mu or el)
