@@ -104,7 +104,9 @@ combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisa
 combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cb
 
 # We can also freeze all aTGC parameters and set a different POI
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_el --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_el --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_el
+
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_mu --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_mu
 
 Asimov Data Set Generation
 --------------------------
@@ -123,6 +125,7 @@ gSystem->AddIncludePath("-I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/lcg/roofit/5.34.
 .L Util.cxx+
 .L hyperg_2F1.c+
 .L HWWLVJRooPdfs.cxx+
+.q
 
 Postfit Plots
 -------------
