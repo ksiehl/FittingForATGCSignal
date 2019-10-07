@@ -119,6 +119,7 @@ combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisa
 # Add --toysFrequentist to generate Asimov data after getting optimal nuisance parameters values from a fit to data. Useful to get projected signal values.
 
 # Before the next step, we need to compile; path can be confirmed with scram tool info roofitcore | grep INCLUDE
+cd PDFs/
 root -b
 gSystem->AddIncludePath("-I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/lcg/roofit/5.34.18-cms3/include");
 .L PdfDiagonalizer.cc+
@@ -126,6 +127,7 @@ gSystem->AddIncludePath("-I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/lcg/roofit/5.34.
 .L hyperg_2F1.c+
 .L HWWLVJRooPdfs.cxx+
 .q
+cd ..
 
 Postfit Plots
 -------------
