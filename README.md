@@ -133,8 +133,30 @@ cd ..
 
 Postfit Plots
 -------------
+# first batch of plots; it appears the -P option has no effect on anything??? creates .eps files, uses mlfit, and depending on options, asimov?
+
 python check_combine_result_all.py -n BkgOnly_mu -c mu -P cwww:3.6
 python check_combine_result_all.py -n BkgOnly_el -c el -P cwww:3.6
+
+python check_combine_result_all.py -n AllZero_cb -c mu -P cb:0.0
+python check_combine_result_all.py -n AllZero_cb -c el -P cb:0.0
+
+python check_combine_result_all.py -n AllZero_ccw -c mu -P ccw:0.0
+python check_combine_result_all.py -n AllZero_ccw -c el -P ccw:0.0
+
+python check_combine_result_all.py -n AllZero_cwww -c mu -P cwww:0.0
+python check_combine_result_all.py -n AllZero_cwww -c el -P cwww:0.0
+
+python check_combine_result_all.py -n _cb_20 -c mu -P cb:20.0
+python check_combine_result_all.py -n _cb_20 -c el -P cb:20.0
+
+python check_combine_result_all.py -n _ccw_4.5 -c mu -P ccw:4.5
+python check_combine_result_all.py -n _ccw_4.5 -c el -P ccw:4.5
+
+python check_combine_result_all.py -n _cwww_3.6 -c mu -P cwww:3.6
+python check_combine_result_all.py -n _cwww_3.6 -c el -P cwww:3.6
+
+
 # -n: Addendum to the file name which contains the fit results
 # -P: Set parameter value (default is -P cwww:0)
 # -a: If we want to plot the Asimov data -a is the full file name which was saved from --saveToys (e.g. higgsCombineAsimov.MaxLikelihoodFit.mH120.123456.root)
@@ -173,5 +195,15 @@ combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --ex
 
 Get 68% and 95% Confidence Intervals
 ------------------------------------
-python build1DInterval.py -3.6 3.6 higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww
+python build1DInterval.py -3.6 3.6 higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww > cwww-limits
+python build1DInterval.py -4.5 4.5 higgsCombine_ccw_4.5.MultiDimFit.mH120.root ccw > ccw-limits
+python build1DInterval.py -20  20  higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits
 
+
+next steps:
+plot1D_limit_Expected.py
+plot2D_limit_Expected.py
+plot1D_limit.py
+plot2D_limit.py
+plotCutoffLimits.py
+signalInjectionTest.py
