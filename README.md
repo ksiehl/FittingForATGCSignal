@@ -133,8 +133,8 @@ cd ..
 
 Postfit Plots
 -------------
-python check_combine_result.py -n BkgOnly_mu -c mu -P cwww:3.6
-python check_combine_result.py -n BkgOnly_el -c el -P cwww:3.6
+python check_combine_result_all.py -n BkgOnly_mu -c mu -P cwww:3.6
+python check_combine_result_all.py -n BkgOnly_el -c el -P cwww:3.6
 # -n: Addendum to the file name which contains the fit results
 # -P: Set parameter value (default is -P cwww:0)
 # -a: If we want to plot the Asimov data -a is the full file name which was saved from --saveToys (e.g. higgsCombineAsimov.MaxLikelihoodFit.mH120.123456.root)
