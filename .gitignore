@@ -1,10 +1,9 @@
-Input
 *.pyc
-Output
-Plots
 *.root
-*.txt
 *.d
 *.so
 *.eps
 *.pdf
+*.log
+*.txt
+*.png
