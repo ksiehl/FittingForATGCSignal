@@ -195,9 +195,9 @@ combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --ex
 
 Get 68% and 95% Confidence Intervals
 ------------------------------------
-python build1DInterval.py -3.6 3.6 higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww > cwww-limits
-python build1DInterval.py -4.5 4.5 higgsCombine_ccw_4.5.MultiDimFit.mH120.root ccw > ccw-limits
-python build1DInterval.py -20  20  higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits
+python build1DInterval.py -3.6 3.6 higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww > cwww-limits.log
+python build1DInterval.py -4.5 4.5 higgsCombine_ccw_4.5.MultiDimFit.mH120.root ccw > ccw-limits.log
+python build1DInterval.py -20  20  higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits.log
 
 
 # Plot the 1-D limits as .pdf files, uses the same files as above step:
