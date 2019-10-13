@@ -90,33 +90,33 @@ Limit Calculation
 Fits for Single Point
 ---------------------
 # To get the exact fit results for any point (e.g. cwww=3.6) we need to run
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=3.6,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cwww_3.6
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=3.6,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cwww_3.6 > cwww-mll.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=4.5,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _ccw_4.5
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=4.5,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _ccw_4.5 > ccw-mll.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=20 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cb_20
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=20 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n _cb_20 > cb-mll.log
 
 # The output is saved in mlfit_cwww_3.6.root containing a RooFitResult fit_s with all final parameter values as well as a RooArgSet norm_fit_s with the final normalizations.
 
 # To get the results for all parameters zero
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cwww
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cwww > cwww-0-mll.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_ccw
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_ccw > ccw-0-mll.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cb
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n AllZero_cb > cb-0-mll.log
 
 # We can also freeze all aTGC parameters and set a different POI
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_el --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_el
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_el --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_el > bkgnd-el-mll.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_mu --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_mu
+combine workspace_simfit.root -M MaxLikelihoodFit --expectSignal=1 --freezeNuisances cwww,ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs normvar_WJets_mu --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n BkgOnly_mu > bkgnd-mu-mll.log
 
 Asimov Data Set Generation
 --------------------------
-combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cwww
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cwww --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cwww > cwww-asmv.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_ccw
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs ccw --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_ccw > ccw-asmv.log
 
-combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cb
+combine workspace_simfit.root -M MaxLikelihoodFit -t -1 --saveToys --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --minimizerStrategy 2 --cminPreScan --redefineSignalPOIs cb --saveNormalizations --saveWithUncertainties --skipBOnlyFit -n Asimov_cb > cb-asmv.log
 
 # Add --toysFrequentist to generate Asimov data after getting optimal nuisance parameters values from a fit to data. Useful to get projected signal values.
 
