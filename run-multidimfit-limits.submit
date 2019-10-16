@@ -1,0 +1,13 @@
+Universe = vanilla
+Executable = run-multidimfit-limits.sh
+
+Error = log/job.err.$(Cluster)-$(Process)
+Output = log/job.out.$(Cluster)-$(Process)
+Log = log/job.log.$(Cluster)
+
+should_transfer_files = YES
+transfer_input_files = workspace_simfit.root
+
+when_to_transfer_output = ON_EXIT
+
+Queue 1 

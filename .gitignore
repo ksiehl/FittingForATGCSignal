@@ -7,3 +7,6 @@
 *.log
 *.txt
 *.png
+*.err.*
+*.log.*
+*.out.*
