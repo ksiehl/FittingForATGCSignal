@@ -6,7 +6,7 @@ Output = log/job.out.$(Cluster)-$(Process)
 Log = log/job.log.$(Cluster)
 
 should_transfer_files = YES
-transfer_input_files = workspace_simfit.root
+transfer_input_files = workspace_simfit.root, combine, libHiggsAnalysisCombinedLimit.so
 
 when_to_transfer_output = ON_EXIT
 
