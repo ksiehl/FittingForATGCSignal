@@ -129,7 +129,7 @@ class Prepare_workspace_4limit:
                     MWW                = treeInATGC.MWW_SD
                     #apply cuts
                     #using whole mj-range (sideband and signal region)
-                    if treeInATGC.jet_pt>200. and treeInATGC.jet_tau21_PUPPI<0.55 and treeInATGC.W_pt>200. and treeInATGC.deltaR_LeptonWJet>math.pi/2. and treeInATGC.jet_mass_softdrop_PUPPI>40 and treeInATGC.jet_mass_softdrop_PUPPI<150 and abs(treeInATGC.deltaPhi_WJetMet)>2. and abs(treeInATGC.deltaPhi_WJetWlep)>2. and treeInATGC.nbtag==0 and treeInATGC.pfMET>METCUT and MWW>self.binlo and treeInATGC.costhetastar<angleval:
+                    if treeInATGC.jet_pt>200. and treeInATGC.jet_tau21_PUPPI<0.55 and treeInATGC.W_pt>200. and treeInATGC.deltaR_LeptonWJet>math.pi/2. and treeInATGC.jet_mass_softdrop_PUPPI>40 and treeInATGC.jet_mass_softdrop_PUPPI<150 and abs(treeInATGC.deltaPhi_WJetMet)>2. and abs(treeInATGC.deltaPhi_WJetWlep)>2. and treeInATGC.nbtag==0 and treeInATGC.pfMET>METCUT and MWW>self.binlo and abs(treeInATGC.costhetastar)<angleval:
 			weight_part = treeInATGC.totEventWeight
 			aTGC        = treeInATGC.aTGCWeights                #contains weights for different workingpoints
 			#all3hists4scale['c_%s_histall3'%WV].Fill(MWW,aTGC[123] * weight_part)
