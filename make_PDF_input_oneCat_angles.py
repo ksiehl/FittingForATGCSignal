@@ -22,6 +22,7 @@ parser.add_option('--printatgc', action='store_true', default=False, help='print
 parser.add_option('--atgc', action='store_true', dest='atgc', default=False, help='use anomalous coupling parametrization instead of EFT')
 parser.add_option('--binWidth', dest='binWidth', default='100.', help='Use different MWV binnings, required for Asimov datasets')
 parser.add_option('--cutoff', dest='mWVCutoff', default='4500.', help='mWV range upper limit in GeV')
+parser.add_option('--starangle', action='store', dest='anglecut', type='float', default=1.0, help='place a cut on theta star')
 
 (options,args) = parser.parse_args()
 
@@ -119,6 +120,8 @@ class Prepare_workspace_4limit:
 
                 lumi_tmp         = 35922.
 
+                angleval=options.anglecut;
+
                 for i in range(treeInATGC.GetEntries()):
                     if i%10000==0:
                             print str(i) + '/' + str(treeInATGC.GetEntries())
@@ -126,7 +129,7 @@ class Prepare_workspace_4limit:
                     MWW                = treeInATGC.MWW_SD
                     #apply cuts
                     #using whole mj-range (sideband and signal region)
-                    if treeInATGC.jet_pt>200. and treeInATGC.jet_tau21_PUPPI<0.55 and treeInATGC.W_pt>200. and treeInATGC.deltaR_LeptonWJet>math.pi/2. and treeInATGC.jet_mass_softdrop_PUPPI>40 and treeInATGC.jet_mass_softdrop_PUPPI<150 and abs(treeInATGC.deltaPhi_WJetMet)>2. and abs(treeInATGC.deltaPhi_WJetWlep)>2. and treeInATGC.nbtag==0 and treeInATGC.pfMET>METCUT and MWW>self.binlo and treeInATGC.costhetastar<0.6:
+                    if treeInATGC.jet_pt>200. and treeInATGC.jet_tau21_PUPPI<0.55 and treeInATGC.W_pt>200. and treeInATGC.deltaR_LeptonWJet>math.pi/2. and treeInATGC.jet_mass_softdrop_PUPPI>40 and treeInATGC.jet_mass_softdrop_PUPPI<150 and abs(treeInATGC.deltaPhi_WJetMet)>2. and abs(treeInATGC.deltaPhi_WJetWlep)>2. and treeInATGC.nbtag==0 and treeInATGC.pfMET>METCUT and MWW>self.binlo and treeInATGC.costhetastar<angleval:
 			weight_part = treeInATGC.totEventWeight
 			aTGC        = treeInATGC.aTGCWeights                #contains weights for different workingpoints
 			#all3hists4scale['c_%s_histall3'%WV].Fill(MWW,aTGC[123] * weight_part)
