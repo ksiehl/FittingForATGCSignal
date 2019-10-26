@@ -1,5 +1,5 @@
 Universe = vanilla
-Executable = run-multidimfit-obs-limits.sh
+Executable = run-multidimfit-exp-limits.sh
 
 Error = log/job.err.$(Cluster)-$(Process)
 Output = log/job.out.$(Cluster)-$(Process)
