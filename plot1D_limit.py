@@ -31,7 +31,7 @@ def plots():
 	path		= './'
 	
 	# Make the expected TGraph
-	wsNameExp	= 'higgsCombine_%s_%s.MultiDimFit.mH120.root'%(POI,pval)
+	wsNameExp	= 'higgsCombine_exp-%s_%s.MultiDimFit.mH120.root'%(POI,pval)
 	print 'Reading expected '+wsNameExp
 	fileInATGCExp	= TFile.Open(path+'ResultsExpected/'+wsNameExp)
 	treeExp		= fileInATGCExp.Get('limit')
@@ -69,7 +69,7 @@ def plots():
         graphExp.SetLineColor(kGreen+2)
 
 	# Make the observed TGraph
-	wsNameObs       = 'higgsCombine_%s_%s.MultiDimFit.mH120.root'%(POI,pval)
+	wsNameObs       = 'higgsCombine_obs-%s_%s.MultiDimFit.mH120.root'%(POI,pval)
         print 'Reading observed '+wsNameExp
         fileInATGCObs   = TFile.Open(path+'ResultsObserved/'+wsNameExp)
         treeObs         = fileInATGCObs.Get('limit')

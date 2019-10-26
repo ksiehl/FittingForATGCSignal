@@ -166,38 +166,75 @@ python check_combine_result_all.py -n _cwww_3.6 -c el -P cwww:3.6
 python check_combine_result_mJ.py -n AllZero -c el -P cwww:0 -r sig
 python check_combine_result_mWV.py -n AllZero -c el -P cwww:0 -r sig
 
+#################################################################################################
 
-1-D Limits
+1-D Limits--expected
 ----------
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww -P cwww --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6 --minimizerStrategy=2 --cminPreScan -n _cwww_3.6
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs cwww -P cwww --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6 --minimizerStrategy=2 --cminPreScan -n _exp-cwww_3.6
 
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs ccw -P ccw --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _ccw_4.5
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs ccw -P ccw --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _exp-ccw_4.5
 
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cb -P cb --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _cb_20
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs cb -P cb --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _exp-cb_20
 
 # For vertex parametrization
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ -P lZ --freezeNuisances dg1z,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014 --minimizerStrategy=2 --cminPreScan -n _lZ_0.014
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dg1z -P dg1z --freezeNuisances lZ,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _dg1z_0.018
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dkz -P dkz --freezeNuisances lZ,dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _dkz_0.02
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs lZ -P lZ --freezeNuisances dg1z,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014 --minimizerStrategy=2 --cminPreScan -n _exp-lZ_0.014
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs dg1z -P dg1z --freezeNuisances lZ,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _exp-dg1z_0.018
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs dkz -P dkz --freezeNuisances lZ,dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _exp-dkz_0.02
 
-2-D Limits
+2-D Limits--expected
 ----------
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww,ccw -P cwww -P ccw --freezeNuisances cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _cwww_3.6_ccw_4.5
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs cwww,ccw -P cwww -P ccw --freezeNuisances cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _exp-cwww_3.6_ccw_4.5
 
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww,cb -P cwww -P cb --freezeNuisances ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _cwww_3.6_cb_20
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs cwww,cb -P cwww -P cb --freezeNuisances ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _exp-cwww_3.6_cb_20
 
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs ccw,cb -P ccw -P cb --freezeNuisances cwww --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _ccw_4.5_cb_20
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs ccw,cb -P ccw -P cb --freezeNuisances cwww --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _exp-ccw_4.5_cb_20
 
 # For vertex parametrization
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ,dg1z -P lZ -P dg1z --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _lZ_0.014_dg1z_0.018
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ,dkz -P lZ -P dkz --freezeNuisances dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _lZ_0.014_dkz_0.02
-combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dg1z,dkz -P dg1z -P dkz --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _dg1z_0.018_dkz_0.02
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs lZ,dg1z -P lZ -P dg1z --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _exp-lZ_0.014_dg1z_0.018
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs lZ,dkz -P lZ -P dkz --freezeNuisances dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _exp-lZ_0.014_dkz_0.02
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t=-1 --points=1000 --redefineSignalPOIs dg1z,dkz -P dg1z -P dkz --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _exp-dg1z_0.018_dkz_0.02
+
+#################################################################################################
+
+1-D Limits--observed
+----------
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww -P cwww --freezeNuisances ccw,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6 --minimizerStrategy=2 --cminPreScan -n _obs-cwww_3.6
+
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs ccw -P ccw --freezeNuisances cwww,cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _obs-ccw_4.5
+
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cb -P cb --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _obs-cb_20
+
+# For vertex parametrization
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ -P lZ --freezeNuisances dg1z,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014 --minimizerStrategy=2 --cminPreScan -n _obs-lZ_0.014
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dg1z -P dg1z --freezeNuisances lZ,dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _obs-dg1z_0.018
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dkz -P dkz --freezeNuisances lZ,dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _obs-dkz_0.02
+
+2-D Limits--observed
+----------
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww,ccw -P cwww -P ccw --freezeNuisances cb --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:ccw=-4.5,4.5 --minimizerStrategy=2 --cminPreScan -n _obs-cwww_3.6_ccw_4.5
+
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cwww,cb -P cwww -P cb --freezeNuisances ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cwww=-3.6,3.6:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _obs-cwww_3.6_cb_20
+
+combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs ccw,cb -P ccw -P cb --freezeNuisances cwww --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange ccw=-4.5,4.5:cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _obs-ccw_4.5_cb_20
+
+# For vertex parametrization
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ,dg1z -P lZ -P dg1z --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dg1z=-0.018,0.018 --minimizerStrategy=2 --cminPreScan -n _obs-lZ_0.014_dg1z_0.018
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs lZ,dkz -P lZ -P dkz --freezeNuisances dg1z --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange lZ=-0.014,0.014:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _obs-lZ_0.014_dkz_0.02
+combine workspace_simfitLEP.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs dg1z,dkz -P dg1z -P dkz --freezeNuisances dkz --setPhysicsModelParameters lZ=0,dg1z=0,dkz=0 --setPhysicsModelParameterRange dg1z=-0.018,0.018:dkz=-0.02,0.02 --minimizerStrategy=2 --cminPreScan -n _obs-dg1z_0.018_dkz_0.02
+
+#################################################################################################
+
+mkdir ResultsExpected
+mkdir ResultsObserved
+
+mv *_exp-*.root ResultsExpected/
+mv *_obs-*.root ResultsObserved/
 
 Get 68% and 95% Confidence Intervals
 ------------------------------------
-python build1DInterval.py -3.6 3.6 higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww > cwww-limits.log
-python build1DInterval.py -4.5 4.5 higgsCombine_ccw_4.5.MultiDimFit.mH120.root ccw > ccw-limits.log
-python build1DInterval.py -20  20  higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits.log
+python build1DInterval.py -3.6 3.6 Results?/higgsCombine_cwww_3.6.MultiDimFit.mH120.root cwww > cwww-limits.log
+python build1DInterval.py -4.5 4.5 Results?/higgsCombine_ccw_4.5.MultiDimFit.mH120.root ccw > ccw-limits.log
+python build1DInterval.py -20  20  Results?/higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits.log
 
 
 # Plot the 1-D limits as .pdf files, uses the same files as above step:

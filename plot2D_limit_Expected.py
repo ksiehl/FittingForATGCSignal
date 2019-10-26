@@ -40,9 +40,9 @@ par_noUnits	= {'cwww' : 'c_{WWW} / #Lambda^{2}', 'ccw' : 'c_{W} / #Lambda^{2}', 
 def plots():
 	path		= './'
 	
-	wsNameExp	= 'higgsCombine_%s_%s_%s_%s.MultiDimFit.mH120.root'%(POI[0],pval[0],POI[1],pval[1])
+	wsNameExp	= 'higgsCombine_exp-%s_%s_%s_%s.MultiDimFit.mH120.root'%(POI[0],pval[0],POI[1],pval[1])
 	print 'Reading '+wsNameExp
-	fileInATGCExp	= TFile.Open(path+wsNameExp)
+	fileInATGCExp	= TFile.Open(path+'ResultsExpected/'+wsNameExp)
 	treeExp		= fileInATGCExp.Get('limit')
 	NEntriesExp	= treeExp.GetEntries()
 
