@@ -237,22 +237,31 @@ python build1DInterval.py -4.5 4.5 Results?/higgsCombine_ccw_4.5.MultiDimFit.mH1
 python build1DInterval.py -20  20  Results?/higgsCombine_cb_20.MultiDimFit.mH120.root cb > cb-limits.log
 
 
-# Plot the 1-D limits as .pdf files, uses the same files as above step:
+# Plot the 1-D expected limits as .pdf files, uses the same files as above step:
 
 python plot1D_limit_Expected.py --POI cwww --pval 3.6
 python plot1D_limit_Expected.py --POI ccw --pval 4.5
 python plot1D_limit_Expected.py --POI cb --pval 20
 
-# Plot the 2-D limits as .pdf files, uses the 2-d multidim fits:
+# Plot the 2-D expected limits as .pdf files, uses the 2-d multidim fits:
 
 python plot2D_limit_Expected.py --POI cwww,ccw --pval 3.6,4.5
 python plot2D_limit_Expected.py --POI cwww,cb --pval 3.6,20
 python plot2D_limit_Expected.py --POI ccw,cb --pval 4.5,20
 
-later: (still unused: all maxlikelihood fit files)
+# Plot the 1-D observed+expected limits as .pdf files, uses the same files as above step:
 
-plot1D_limit.py
-plot2D_limit.py
+python plot1D_limit.py --POI cwww --pval 3.6
+python plot1D_limit.py --POI ccw --pval 4.5
+python plot1D_limit.py --POI cb --pval 20
+
+# Plot the 2-D observed+expected limits as .pdf files, uses the 2-d multidim fits:
+
+python plot2D_limit.py --POI cwww,ccw --pval 3.6,4.5
+python plot2D_limit.py --POI cwww,cb --pval 3.6,20
+python plot2D_limit.py --POI ccw,cb --pval 4.5,20
+
+later: (still unused: all maxlikelihood fit files)
 
 plotCutoffLimits.py
 signalInjectionTest.py
