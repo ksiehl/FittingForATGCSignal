@@ -71,7 +71,7 @@ def plots():
 	# Make the observed TGraph
 	wsNameObs       = 'higgsCombine_obs-%s_%s.MultiDimFit.mH120.root'%(POI,pval)
         print 'Reading observed '+wsNameExp
-        fileInATGCObs   = TFile.Open(path+'ResultsObserved/'+wsNameExp)
+        fileInATGCObs   = TFile.Open(path+'ResultsObserved/'+wsNameObs)
         treeObs         = fileInATGCObs.Get('limit')
         NEntriesObs     = treeObs.GetEntries()
 
