@@ -140,9 +140,9 @@ def plots():
 		bestFitPoints	= []
 		colors	= []
 		for binWid in binWidths:
-			wsNameExp	= 'higgsCombine_%s_%s_%s_%s_binWidth%s.MultiDimFit.mH120.root'%(POI[0],pval[0],POI[1],pval[1],binWid)
+			wsNameExp	= 'higgsCombine_exp-%s_%s_%s_%s_binWidth%s.MultiDimFit.mH120.root'%(POI[0],pval[0],POI[1],pval[1],binWid)
 			print 'Reading '+wsNameExp
-			fileInBias	= TFile.Open(path+wsNameExp)
+			fileInBias	= TFile.Open(path+'ResultsExpected/'+wsNameExp)
 			treeInBias	= fileInBias.Get('limit')
 			treeInBias.GetEntry(0)
 			bestFitPoint = TGraph(1)
