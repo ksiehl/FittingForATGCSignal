@@ -35,7 +35,8 @@ mv ./Input/WW-aTGC_ele.root ./Input/WW-aTGC_el.root
 mv ./Input/WZ-aTGC_ele.root ./Input/WZ-aTGC_el.root
 
 #####start here when redoing angles#######################
-mv Plots/* Output/* ResultsObserved/ ResultsExpected/ *.root *.log *.txt *.pdf *.eps backup-dir/
+mv Plots/ Output/ ResultsObserved/ ResultsExpected/ *.root *.log *.txt *.pdf *.eps backup-dir/
+mkdir Plot Output
 mv Input/wwlvj_{el,mu}_HPV_workspace.root Input/backup-dir
 
 cp ../../../../BCKGRND_STEP/CMSSW_5_3_32/src/FittingForATGCBackground/cards_mu_HPV_900_4500/wwlvj_mu_HPV_900_4500_workspace.root ./Input/wwlvj_mu_HPV_workspace.root
