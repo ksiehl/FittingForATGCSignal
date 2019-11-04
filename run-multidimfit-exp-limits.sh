@@ -10,7 +10,7 @@ eval `scramv1 runtime -sh`
 echo "CMSSW: "$CMSSW_BASE
 cd -
 
-#echo "we've gotten this far. Now let's quit." 
+#echo "computing observed 1-D limits.\n"
 #1-D Limits--observed
 #----------
 
@@ -20,6 +20,7 @@ cd -
 
 #./combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid --expectSignal=1 --points=1000 --redefineSignalPOIs cb -P cb --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _obs-cb_20
 
+#echo "computing observed 2-D limits.\n"
 
 #2-D Limits--observed
 #----------
@@ -32,6 +33,8 @@ cd -
 
 ################################################################
 
+echo "computing expected 1-D limits.\n"
+
 #1-D Limits--expected
 #----------
 
@@ -41,6 +44,7 @@ cd -
 
 ./combine workspace_simfit.root -M MultiDimFit --floatOtherPOIs=0 --algo=grid -t -1 --points=1000 --redefineSignalPOIs cb -P cb --freezeNuisances cwww,ccw --setPhysicsModelParameters cwww=0,ccw=0,cb=0 --setPhysicsModelParameterRange cb=-20,20 --minimizerStrategy=2 --cminPreScan -n _exp-cb_20
 
+echo "computing expected 2-D limits.\n"
 
 #2-D Limits--expected
 #----------
