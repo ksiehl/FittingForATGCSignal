@@ -179,7 +179,7 @@ def plots():
 	leg.Draw("SAME")
 
 	c1.Update()
-	c1.SaveAs("limit2D_%s_%s.pdf"%(par1,par2))
+	c1.SaveAs("limit2D_exp_%s_%s.pdf"%(par1,par2))
 	raw_input('<>')
 
 plots()
