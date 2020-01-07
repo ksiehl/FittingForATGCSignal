@@ -22,9 +22,9 @@ parser.add_option('--printatgc', action='store_true', default=False, help='print
 parser.add_option('--atgc', action='store_true', dest='atgc', default=False, help='use anomalous coupling parametrization instead of EFT')
 parser.add_option('--binWidth', dest='binWidth', default='100.', help='Use different MWV binnings, required for Asimov datasets')
 parser.add_option('--cutoff', dest='mWVCutoff', default='4500.', help='mWV range upper limit in GeV')
-parser.add_option('--starangle', action='store', dest='starcut', type='float', default=1.0, help='place a cut on theta star')
-parser.add_option('--oneangle', action='store', dest='onecut', type='float', default=1.0, help='place a cut on theta one')
-parser.add_option('--twoangle', action='store', dest='twocut', type='float', default=1.0, help='place a cut on theta two')
+parser.add_option('--starangle', action='store', dest='starcut', type='float', default=2.0, help='place a cut on theta star')
+parser.add_option('--oneangle', action='store', dest='onecut', type='float', default=2.0, help='place a cut on theta one')
+parser.add_option('--twoangle', action='store', dest='twocut', type='float', default=2.0, help='place a cut on theta two')
 
 (options,args) = parser.parse_args()
 
