@@ -749,12 +749,23 @@ class Prepare_workspace_4limit:
 # Deco_TTbar_sig_{ch}_HPV_mlvj_13TeV_eig1 param 0.0 2.0
 
 # Write in the data card            
+#            card += '''
+#normvar_WJets_{ch}  flatParam
+#rrv_c_ChiSq_WJets0_{ch}  flatParam
+#rrv_shift_ChiSq_WJets0_{ch}  flatParam
+#rrv_n_ExpN_WJets0_sb_{ch}  flatParam
+#rrv_c_ExpN_WJets0_sb_{ch}  flatParam
+#Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig0 param 0.0 1.815
+#Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig1 param 0.0 1.815
+#Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig2 param 0.0 1.815
+#Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig3 param 0.0 1.815
+#slope_nuis    param  1.0 0.05'''.format(ch=self.ch)
             card += '''
 normvar_WJets_{ch}  flatParam
 rrv_c_ChiSq_WJets0_{ch}  flatParam
 rrv_shift_ChiSq_WJets0_{ch}  flatParam
-rrv_n_ExpN_WJets0_sb_{ch}  flatParam
-rrv_c_ExpN_WJets0_sb_{ch}  flatParam
+rrv_s_ExpTail_WJets0_sb_{ch}  flatParam
+rrv_a_ExpTail_WJets0_sb_{ch}  flatParam
 Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig0 param 0.0 1.815
 Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig1 param 0.0 1.815
 Deco_WJets0_sim_{ch}_HPV_mlvj_13TeV_eig2 param 0.0 1.815
@@ -900,8 +911,10 @@ slope_nuis    param  1.0 0.05'''.format(ch=self.ch)
 		#self.WS2.var("rrv_b3_Poly3_WJets0_%s"%self.ch).setConstant(kFALSE)
                 self.WS2.var("normvar_WJets_%s"%self.ch).setConstant(kFALSE)
                 if 'sb' in region:
-                    self.WS2.var("rrv_c_ExpN_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
-                    self.WS2.var("rrv_n_ExpN_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
+                    #self.WS2.var("rrv_c_ExpN_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
+                    #self.WS2.var("rrv_n_ExpN_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
+		    self.WS2.var("rrv_s_ExpTail_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
+		    self.WS2.var("rrv_a_ExpTail_WJets0_sb_%s"%self.ch).setConstant(kFALSE)
                 else:
                     self.WS2.var("Deco_WJets0_sim_%s_HPV_mlvj_13TeV_eig0"%self.ch).setConstant(kTRUE)
                     self.WS2.var("Deco_WJets0_sim_%s_HPV_mlvj_13TeV_eig1"%self.ch).setConstant(kTRUE)
