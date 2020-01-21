@@ -210,7 +210,7 @@ def plots():
 
 	# ======================================================================================================
 
-	CMS_lumi.cmsTextSize	= 0.7
+	CMS_lumi.cmsTextSize	= 0.5
         CMS_lumi.relPosY        = -0.08
 	CMS_lumi.lumiTextSize	= 0.525
 	CMS_lumi.lumiTextOffset	= 0.1

@@ -232,13 +232,13 @@ mv *_obs-*.root ResultsObserved/
 
 Get 68% and 95% Confidence Intervals
 ------------------------------------
-python build1DInterval.py -3.6 3.6 ResultsObserved/higgsCombine_obs-cwww_3.6.MultiDimFit.mH120.root cwww > cwww-obs-limits.log
-python build1DInterval.py -4.5 4.5 ResultsObserved/higgsCombine_obs-ccw_4.5.MultiDimFit.mH120.root ccw > ccw-obs-limits.log
-python build1DInterval.py -20  20  ResultsObserved/higgsCombine_obs-cb_20.MultiDimFit.mH120.root cb > cb-obs-limits.log
+python build1DInterval.py -3.6 3.6 ResultsObserved/higgsCombine_obs-cwww_3.6.MultiDimFit.mH120.root cwww | tee cwww-obs-limits.log
+python build1DInterval.py -4.5 4.5 ResultsObserved/higgsCombine_obs-ccw_4.5.MultiDimFit.mH120.root ccw | tee ccw-obs-limits.log
+python build1DInterval.py -20  20  ResultsObserved/higgsCombine_obs-cb_20.MultiDimFit.mH120.root cb | tee cb-obs-limits.log
 
-python build1DInterval.py -3.6 3.6 ResultsExpected/higgsCombine_exp-cwww_3.6.MultiDimFit.mH120.root cwww > cwww-exp-limits.log
-python build1DInterval.py -4.5 4.5 ResultsExpected/higgsCombine_exp-ccw_4.5.MultiDimFit.mH120.root ccw > ccw-exp-limits.log
-python build1DInterval.py -20  20  ResultsExpected/higgsCombine_exp-cb_20.MultiDimFit.mH120.root cb > cb-exp-limits.log
+python build1DInterval.py -3.6 3.6 ResultsExpected/higgsCombine_exp-cwww_3.6.MultiDimFit.mH120.root cwww | tee cwww-exp-limits.log
+python build1DInterval.py -4.5 4.5 ResultsExpected/higgsCombine_exp-ccw_4.5.MultiDimFit.mH120.root ccw | tee ccw-exp-limits.log
+python build1DInterval.py -20  20  ResultsExpected/higgsCombine_exp-cb_20.MultiDimFit.mH120.root cb | tee cb-exp-limits.log
 
 # Plot the 1-D expected limits as .pdf files, uses the same files as above step:
 
