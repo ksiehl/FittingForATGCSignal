@@ -378,7 +378,7 @@ class Prepare_workspace_4limit:
                     can2[i].SaveAs('Plots/%s_pos_%s.png'%(self.POI[i],channel))
                     
             if not options.batch:
-                raw_input('plots plotted')
+                raw_input('plots plotted: press ENTER to continue')
 
             
         #function to import multiple items from a list into a workspace
